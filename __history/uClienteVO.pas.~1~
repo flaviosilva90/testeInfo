@@ -1,0 +1,66 @@
+unit uClienteVO;
+
+interface
+
+uses
+  SysUtils, Generics.Collections, Aurelius.Mapping.Attributes, Aurelius.Types.Blob,
+  Aurelius.Types.DynamicProperties, Aurelius.Types.Nullable, Aurelius.Types.Proxy,
+  Aurelius.Criteria.Dictionary;
+
+type
+  [Entity, Automapping]
+  [Table('cliente')]
+  [Id('FId', TIdGenerator.Uuid36)]
+  TMovitVO = class
+  private
+    [Column('Nome')]
+    FNome  : String;
+    [Column('Identidade', [])]
+    FIdentidade: String;
+    [Column('CPF', [])]
+    FCPF: String;
+    [Column('Telefone', [])]
+    FTelefone: String;
+    [Column('Email', [])]
+    FEmail: String;
+    [Column('CEP', [])]
+    FCEP: String;
+    [Column('Logradouro', [])]
+    FLogradouro: String;
+    [Column('Numero', [])]
+    FNumero: String;
+    [Column('Complemento', [])]
+    FComplemento: String;
+    [Column('Bairro', [])]
+    FBairro: String;
+    [Column('Cidade', [])]
+    FCidade: String;
+    [Column('Estado', [])]
+    FEstado: String;
+    [Column('Pais', [])]
+    FPais: String;
+  public
+    property Nome : String                 read FNome           write FNome;
+    property Identidade : String           read FIdentidade     write FIdentidade;
+    property CPF : String                  read FCPF            write FCPF;
+    property Telefone : String             read FTelefone       write FTelefone;
+    property Email : String                read FEMail          write Femail;
+    property CEP : String                  read FCEP            write FCEP;
+    property Logradouro : String           read FLogradouro     write FLogradouro;
+    property Numero : String               read FNumero         write FNumero;
+    property Complemento : String          read FComplemento    write FComplemento;
+    property Bairro : String               read FBairro         write FBairro;
+    property Cidade : String               read FCidade         write FCidade;
+    property Pais : String                 read FPais           write FPais;
+
+  end;
+
+implementation
+
+{ TMovitVO }
+
+initialization
+  RegisterEntity(TMovitVO);
+
+
+end.

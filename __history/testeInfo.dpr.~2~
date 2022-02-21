@@ -1,0 +1,15 @@
+program testeInfo;
+
+uses
+  Vcl.Forms,
+  uCadCliente in 'uCadCliente.pas' {Form1},
+  uClienteVO in 'uClienteVO.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
